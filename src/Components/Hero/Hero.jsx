@@ -1,7 +1,9 @@
-import React, { useEffect, useRef } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import profile_img from "../../assets/Animatedpic.jpeg";
 import AOS from "aos";
 import "aos/dist/aos.css";
+import { Link } from "react-scroll";
+
 
 // Add the typing animation styles
 const typingStyles = `
@@ -43,6 +45,7 @@ const typingStyles = `
 
 const Hero = () => {
   const h1Ref = useRef(null);
+   const [activeItem, setActiveItem] = useState("contact");
 
   useEffect(() => {
     AOS.init({ duration: 1000, once: true });
@@ -91,9 +94,17 @@ const Hero = () => {
         className="flex flex-col sm:flex-row items-center gap-4 sm:gap-6 mt-6"
         data-aos="zoom-in"
       >
-        <button className="px-6 py-2.5 sm:px-8 sm:py-3 rounded-full font-semibold text-sm sm:text-base bg-cyan-500 text-black transition-transform duration-300 hover:scale-105 w-full sm:w-auto">
-          Connect With Me
-        </button>
+        
+        <Link
+  to="contact"      // id of the section you want to scroll to
+  smooth={true}
+  duration={500}
+  onClick={() => setActiveItem("contact")}
+  className="px-6 py-2.5 sm:px-8 sm:py-3 rounded-full font-semibold text-sm sm:text-base bg-cyan-500 text-black transition-transform duration-200 hover:scale-105 w-full sm:w-auto text-center cursor-pointer"
+>
+  Contact Me
+</Link>
+
         <button className="px-6 py-2.5 sm:px-8 sm:py-3 rounded-full font-semibold text-sm sm:text-base bg-cyan-500 text-black transition-transform duration-200 hover:scale-105 w-full sm:w-auto">
           My Resume
         </button>

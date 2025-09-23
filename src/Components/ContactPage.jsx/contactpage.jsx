@@ -115,8 +115,8 @@ const sendMail = (e) => {
             </div>
 
             <form ref={form} onSubmit={sendMail}>
-              <div className="space-y-6">
-                <div className="grid md:grid-cols-2 gap-6">
+              <div  className="space-y-6">
+                <div id='input' className="grid  md:grid-cols-2 gap-6">
                   <div className="relative">
                     <input
                       id="name"

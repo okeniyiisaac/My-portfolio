@@ -7,6 +7,7 @@ import {
   Search, 
   Settings 
 } from "lucide-react";
+import { Link } from "react-scroll";
 const services = [
   {
     id: 1,
@@ -118,12 +119,14 @@ const Services = () => {
         </div>
 
         <div className="text-center mt-16">
+          <Link to="input" smooth={true} duration={500}>
           <div className="inline-flex items-center space-x-4 bg-slate-800/60 backdrop-blur-sm border border-slate-700/50 rounded-full px-8 py-4 hover:border-cyan-500/50 transition-all duration-300 group">
             <span className="text-gray-300 text-lg font-medium">Ready to start your project?</span>
             <button className="bg-gradient-to-r from-cyan-500 to-blue-500 text-white px-6 py-2 rounded-full text-sm font-semibold hover:from-cyan-400 hover:to-blue-400 transition-all duration-300 transform group-hover:scale-105">
               Get Started
             </button>
           </div>
+        </Link>
         </div>
       </div>
     </section>

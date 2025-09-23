@@ -3,7 +3,7 @@ import React from 'react';
 
 const Footer = () => {
   return (
-    <footer className="bg-slate-700  text-white">
+    <footer className="bg-slate-700 text-white">
       <div className="max-w-7xl mx-auto px-6 py-16">
         <div className="text-center mb-12">
           <h2 className="text-4xl font-bold mb-4 bg-gradient-to-r from-blue-400 to-indigo-400 bg-clip-text text-transparent">
@@ -95,24 +95,30 @@ const Footer = () => {
             <span className="font-medium">Instagram</span>
           </a>
         </div>
-        <div className=" border-t border-slate-800"> 
-  <div className="max-w-7xl mx-auto px-6 py-3"> 
-    <div className="flex flex-col md:flex-row justify-between items-center gap-2"> {/* Reduced gap-4 to gap-2 */}
-      <p className="text-slate-400 mb-6 text-sm">
-        © {new Date().getFullYear()} Isaac Okeniyi. All rights reserved.
-      </p>
-      <div className="flex items-center gap-2 text-slate-400 text-sm">
-        <span></span>
-        <span></span>
-      </div>
-    </div>
-  </div>
-</div>
-      </div>
-<div className='fixed bottom-8right-4 z-50'>
-    <FloatButton.BackTop visibilityHeight={0} />
-</div>
 
+        <div className="border-t border-slate-800"> 
+          <div className="max-w-7xl mx-auto px-6 py-3"> 
+            <div className="flex flex-col md:flex-row justify-between items-center gap-2">
+              <p className="text-slate-400 mb-6 text-sm">
+                © {new Date().getFullYear()} Isaac Okeniyi. All rights reserved.
+              </p>
+              <div className="flex items-center gap-2 text-slate-400 text-sm">
+                <span></span>
+                <span></span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      {/* Float Button positioned to avoid navbar overlap */}
+      <FloatButton.BackTop 
+        visibilityHeight={0} 
+        style={{ 
+          bottom: 100, // Increased bottom margin to clear navbar
+          zIndex: 40   // Lower z-index to stay below navbar
+        }} 
+      />
     </footer>
   );
 };

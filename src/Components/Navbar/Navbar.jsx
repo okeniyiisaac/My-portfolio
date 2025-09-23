@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import { Home, User, FileText, Mail, Code, Award, Star, Briefcase } from "lucide-react";
 import { Link } from "react-scroll";
 
+
 const Link2 = ({ to, smooth, duration, children, onClick }) => (
   <a 
     href={`#${to}`} 
