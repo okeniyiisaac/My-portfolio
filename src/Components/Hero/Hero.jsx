@@ -57,7 +57,7 @@ const Hero = () => {
   }, []);
 
   return (
-    <section id="home" className="relative min-h-screen">
+    <section id="home" className="relative h-full">
       <style>{typingStyles}</style>
 
       {/* ✅ Background image */}
