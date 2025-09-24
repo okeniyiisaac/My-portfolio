@@ -1,5 +1,5 @@
 import React, { useEffect } from "react";
-import { ExternalLink } from "lucide-react";
+import { ExternalLink, Github } from "lucide-react"; 
 import AOS from "aos";
 import "aos/dist/aos.css";
 import voyagerpic from "../../assets/voyagepic.jpg";
@@ -50,9 +50,11 @@ const ProjectPage = () => {
 
   return (
     <div>
+      {/* Section Header */}
       <section
-      id="projects"
-      className="py-20 px-6 text-center relative overflow-hidden">
+        id="projects"
+        className="py-20 px-6 text-center relative overflow-hidden"
+      >
         <div className="absolute inset-0 bg-gradient-radial from-cyan-500/10 via-transparent to-transparent"></div>
         <div
           className="max-w-4xl mx-auto relative z-10"
@@ -75,6 +77,7 @@ const ProjectPage = () => {
         <div className="absolute bottom-20 right-10 w-32 h-32 bg-blue-400 rounded-full opacity-10 animate-pulse delay-1000"></div>
       </section>
 
+      {/* Project Cards */}
       <section className="px-6 pb-20">
         <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10">
           {projects.map((project, index) => (
@@ -84,6 +87,7 @@ const ProjectPage = () => {
               data-aos="zoom-in-up"
               data-aos-delay={index * 150}
             >
+              {/* Project Image */}
               <div className="h-56 w-full overflow-hidden group">
                 <img
                   src={project.image}
@@ -92,58 +96,49 @@ const ProjectPage = () => {
                 />
               </div>
 
-              <div className="p-6 flex flex-col justify-between h-full">
-                <div>
-                  <h3 className="text-2xl font-semibold text-white mb-2">
-                    {project.title}
-                  </h3>
-                  <p className="text-sm text-gray-400 mb-4">
-                    {project.description}
-                  </p>
-                  <div className="flex flex-wrap gap-2 mb-4">
-                    {project.technologies.map((tech, techIndex) => (
-                      <span
-                        key={techIndex}
-                        className="px-2 py-1 text-xs bg-cyan-800/20 text-cyan-300 rounded-full border border-cyan-500/30"
-                      >
-                        {tech}
-                      </span>
-                    ))}
-                  </div>
+             
+              <div className="p-6 flex flex-col h-full">
+                <h3 className="text-2xl font-semibold text-white mb-2">
+                  {project.title}
+                </h3>
+
+                <p className="text-sm text-gray-400 mb-4">
+                  {project.description}
+                </p>
+
+               
+                <div className="flex flex-wrap gap-2 mb-4">
+                  {project.technologies.map((tech, techIndex) => (
+                    <span
+                      key={techIndex}
+                      className="px-2 py-1 text-xs bg-cyan-800/20 text-cyan-300 rounded-full border border-cyan-500/30"
+                    >
+                      {tech}
+                    </span>
+                  ))}
                 </div>
 
-                <div className="flex justify-between items-center mt-auto">
-                  <div className="flex gap-3">
-                    <a
-                      href={project.demoUrl}
-                      className="text-cyan-400 hover:text-white transition"
-                      target="_blank"
-                      rel="noopener noreferrer"
-                    >
-                      <ExternalLink size={22} />
-                    </a>
-                    <a
-                      href={project.githubUrl}
-                      className="bg-white rounded-full p-2 flex items-center justify-center shadow hover:bg-cyan-400 transition"
-                      target="_blank"
-                      rel="noopener noreferrer"
-                    >
-                      <svg
-                        xmlns="http://www.w3.org/2000/svg"
-                        width="22"
-                        height="22"
-                        viewBox="0 0 24 24"
-                        fill="none"
-                        stroke="#0f172a"
-                        strokeWidth="2"
-                        strokeLinecap="round"
-                        strokeLinejoin="round"
-                        className="lucide lucide-github"
-                      >
-                        <path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77a5.07 5.07 0 0 0-.09-3.77S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22" />
-  </svg>
-                    </a>
-                  </div>
+               
+                <div className="flex gap-4 mt-2">
+                  <a
+                    href={project.demoUrl}
+                    className="flex hover:text-white text-cyan-400 transition bg-blue-950 rounded-full px-4 py-2 items-center gap-2"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    <ExternalLink  size={22} /> 
+                    <p>View Demo</p>
+                  </a>
+
+                  <a
+                    href={project.githubUrl}
+                    className="flex hover:text-white text-cyan-400 transition bg-blue-950 rounded-full px-4 py-2 items-center gap-2"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    <Github size={22} />
+                    <p>Github</p>
+                  </a>
                 </div>
               </div>
             </div>
