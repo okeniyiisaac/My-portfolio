@@ -111,12 +111,12 @@ const Footer = () => {
         </div>
       </div>
 
-      {/* Float Button positioned to avoid navbar overlap */}
+      
       <FloatButton.BackTop 
         visibilityHeight={0} 
         style={{ 
-          bottom: 100, // Increased bottom margin to clear navbar
-          zIndex: 40   // Lower z-index to stay below navbar
+          bottom: 100, 
+          zIndex: 40   
         }} 
       />
     </footer>
