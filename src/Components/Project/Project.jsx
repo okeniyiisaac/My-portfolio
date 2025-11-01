@@ -5,6 +5,7 @@ import "aos/dist/aos.css";
 import voyagerpic from "../../assets/voyagepic.jpg";
 import glide from "../../assets/glide.jpg";
 import pp from "../../assets/portfolio.jpg";
+import ai_dashboard from"../../assets/dashboard.jpg";
 
 const ProjectPage = () => {
   useEffect(() => {
@@ -24,32 +25,32 @@ const ProjectPage = () => {
       technologies: ["React", "Tailwind CSS", "JavaScript"],
       image: voyagerpic,
       demoUrl: "#",
-      githubUrl: "#",
+      githubUrl: "https://github.com/okeniyiisaac",
     },
     {
       id: 2,
+      title: "AI Dashboard",
+      description:
+        "An AI analytics dashboard showcasing data visualizations, logs, billing, and settings. Built with React, Tailwind CSS, and Recharts for interactive and modern data visualization.",
+      technologies: ["React", "Tailwind CSS", "JavaScript", "Recharts"],
+      image: ai_dashboard,
+      demoUrl: "https://ai-dashboard-a9r8.vercel.app/",
+      githubUrl: "https://github.com/okeniyiisaac",
+    },
+    {
+      id: 3,
       title: "Personal Portfolio Website",
       description:
         "A personal portfolio website showcasing my projects, skills, and experience. Built with React and Tailwind CSS for a modern look.",
       technologies: ["React", "Tailwind CSS", "JavaScript"],
       image: pp,
       demoUrl: "#",
-      githubUrl: "#",
-    },
-    {
-      id: 3,
-      title: "Glide Bite Restaurant",
-      description:
-        "A sleek and responsive restaurant website for Glide Bite, featuring an interactive menu, online reservations, and smooth navigation. Designed to highlight the brand’s modern identity while ensuring great usability.",
-      technologies: ["React", "Tailwind CSS", "JavaScript"],
-      image: glide,
-      demoUrl: "#",
-      githubUrl: "#",
+      githubUrl: "https://github.com/okeniyiisaac",
     },
   ];
 
   return (
-    <div>
+    <div> 
       {/* Section Header */}
       <section
         id="projects"
@@ -87,14 +88,15 @@ const ProjectPage = () => {
               data-aos="zoom-in-up"
               data-aos-delay={index * 150}
             >
-              {/* Project Image */}
-              <div className="h-56 w-full overflow-hidden group">
-                <img
-                  src={project.image}
-                  alt={project.title}
-                  className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
-                />
-              </div>
+             {/* Project Image */}
+<div className="h-56 w-full overflow-hidden bg-gray-900 flex items-center justify-center">
+  <img
+    src={project.image}
+    alt={project.title}
+    className="w-full h-full object-contain transition-transform duration-500 group-hover:scale-105"
+  />
+</div>
+
 
              
               <div className="p-6 flex flex-col h-full">
