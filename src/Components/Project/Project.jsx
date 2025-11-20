@@ -24,7 +24,7 @@ const ProjectPage = () => {
         "A modern travel and booking platform with a clean UI for exploring destinations, booking tours, and managing trips seamlessly. Built with React and Tailwind for responsiveness.",
       technologies: ["React", "Tailwind CSS", "JavaScript"],
       image: voyagerpic,
-      demoUrl: "#",
+      demoUrl: "https://travelsandtourvoyage.com/",
       githubUrl: "https://github.com/okeniyiisaac",
     },
     {
